@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  UrbanCodeGit
+//  UnitTesting
 //
 //  Created by United TCS Mini on 25/03/17.
 //  Copyright © 2017 United TCS Mini. All rights reserved.
@@ -25,5 +25,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)updateString
+{
+    
+    
+    self.string=@"String";
+    
+    
+    
+}
 
 @end

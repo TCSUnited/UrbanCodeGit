@@ -1,18 +1,21 @@
 //
-//  UrbanCodeGitTests.m
-//  UrbanCodeGitTests
+//  UnitTestingTests.m
+//  UnitTestingTests
 //
 //  Created by United TCS Mini on 25/03/17.
 //  Copyright © 2017 United TCS Mini. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import "ViewController.h"
 
-@interface UrbanCodeGitTests : XCTestCase
+@interface UnitTestingTests : XCTestCase
+
+@property ViewController *vcToTest;
 
 @end
 
-@implementation UrbanCodeGitTests
+@implementation UnitTestingTests
 
 - (void)setUp {
     [super setUp];
@@ -24,9 +27,16 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testStringUpdate {
+    
+    _vcToTest=[[ViewController alloc]init];
+    
+    NSString *expectedString=@"String";
+    [_vcToTest updateString];
+    NSString *resultString=_vcToTest.string;
+    XCTAssertEqualObjects(expectedString, resultString,@"Testing update straing");
+    
+    
 }
 
 - (void)testPerformanceExample {
@@ -37,3 +47,4 @@
 }
 
 @end
+
