@@ -14,6 +14,7 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -35,4 +36,13 @@
     
 }
 
+- (IBAction)copyText:(id)sender {
+    
+    
+    [_destinationBtn setTitle:_textField.text forState:UIControlStateNormal];
+    
+}
+
+- (IBAction)destinationButton:(id)sender {
+}
 @end
