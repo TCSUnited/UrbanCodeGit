@@ -31,7 +31,7 @@
     
     _vcToTest=[[ViewController alloc]init];
     
-    NSString *expectedString=@"String 3";
+    NSString *expectedString=@"String";
     [_vcToTest updateString];
     NSString *resultString=_vcToTest.string;
     XCTAssertEqualObjects(expectedString, resultString,@"Testing update straing");
