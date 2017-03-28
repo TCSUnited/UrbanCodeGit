@@ -13,10 +13,6 @@
 @property(nonatomic,strong) NSString *string;
 -(void)updateString;
 
-@property (weak, nonatomic) IBOutlet UITextField *textField;
-- (IBAction)copyText:(id)sender;
-- (IBAction)destinationButton:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *destinationBtn;
 
 @end
 
