@@ -30,11 +30,24 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    
 }
 
 - (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *textField = [[app.otherElements containingType:XCUIElementTypeButton identifier:@"Click to Copy test"] childrenMatchingType:XCUIElementTypeTextField].element;
+    [textField tap];
+    [textField typeText:@"hello"];
+    [app.buttons[@"Click to Copy test"] tap];
+    XCTAssert([app.buttons[@"hello"]exists]);
+    
+    
+ 
+    
 }
+
+
 
 @end
