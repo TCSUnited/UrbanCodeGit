@@ -21,6 +21,10 @@
     
     // In UI tests it is usually best to stop immediately when a failure occurs.
     self.continueAfterFailure = NO;
+    
+  
+    
+    
     // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
     [[[XCUIApplication alloc] init] launch];
     
@@ -33,6 +37,15 @@
 }
 
 - (void)testExample {
+    
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *textField = [[app.otherElements containingType:XCUIElementTypeButton identifier:@"Copy the contetnt"] childrenMatchingType:XCUIElementTypeTextField].element;
+    [textField tap];
+    [textField typeText:@"hello"];
+    [app.buttons[@"Copy the contetnt"] tap];
+    XCTAssert(app.buttons[@"hello"].exists);
+    
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }

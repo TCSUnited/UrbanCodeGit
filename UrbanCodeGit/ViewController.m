@@ -35,4 +35,8 @@
     
 }
 
+- (IBAction)copyCOntent:(id)sender {
+    [self.tagetBtn setTitle:self.textField.text forState:UIControlStateNormal];
+    
+}
 @end
