@@ -42,7 +42,7 @@
     XCUIApplication *app = [[XCUIApplication alloc] init];
     XCUIElement *textField = [[app.otherElements containingType:XCUIElementTypeButton identifier:@"Copy the contetnt"] childrenMatchingType:XCUIElementTypeTextField].element;
     [textField tap];
-    [textField typeText:@"hello hi"];
+    [textField typeText:@"hello"];
     [app.buttons[@"Copy the contetnt"] tap];
     XCTAssert(app.buttons[@"hello"].exists);
     
